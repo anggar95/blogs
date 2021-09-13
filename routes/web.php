@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostsController;
+use App\Http\Controllers\CommentsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,8 +17,11 @@ use App\Http\Controllers\PostsController;
 
 
 Route::redirect('/', '/posts')->middleware('auth');
-Route::resource('posts',PostsController::class)->middleware('auth');
 
+Route::resource('posts',PostsController::class)->middleware('auth');
+Route::resource('comments',CommentsController::class)->except([
+    'index', 'show', 'update', 'edit'
+])->middleware('auth');
 require __DIR__.'/auth.php';
 
 

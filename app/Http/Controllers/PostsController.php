@@ -4,15 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\PostsRequest;
 use App\Models\Post;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
 class PostsController extends Controller
 {
     public function index()
     {
-        $posts = Post::where('user_id', auth()->user()->id)
-            ->orderBy('id', 'desc')
+        $posts = Post::orderBy('id', 'desc')
             ->paginate(15);
         return view('blog.index', ['posts' => $posts]);
     }
@@ -36,8 +34,10 @@ class PostsController extends Controller
 
     public function show(Post $post)
     {
+        $comments = $post->comments;
         return view('blog.show', [
-            'post' => $post
+            'post' => $post,
+            'comments' => $comments
         ]);
     }
 

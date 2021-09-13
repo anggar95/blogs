@@ -7,6 +7,11 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## About Project
+
+This Blog application created on Laravel8 with Breeze and Bootstrap frameworks. You can download it to your path, and run by http://blogs.test/ . At the first time you use this application, you need to register, after that you can upload your own posts, edit and delete them.
+
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
